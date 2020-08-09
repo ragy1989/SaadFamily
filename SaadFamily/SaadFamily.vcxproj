@@ -151,9 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Linda.cpp" />
     <ClCompile Include="SaadFamily.cpp" />
-    <ClCompile Include="Sara.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Linda.h" />

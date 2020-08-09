@@ -1,11 +1,23 @@
 // SaadFamily.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+using namespace std;
 #include <iostream>
+#include "Sara.h"
+#include "Linda.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	Linda<int> s;
+
+	s.push_back(2);
+	s.push_back(3);
+	s.push_back(4);
+	s.push_front(1);
+	s.push_front(0);
+	s.earse(2);
+
+	s.data();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

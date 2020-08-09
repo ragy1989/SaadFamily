@@ -14,7 +14,7 @@ template <typename T>
 class Linda
 {
 private:
-	node<T> *head, *tail, *previousNode;
+	node<T> *head, *tail;
 	int size;
 
 public:
@@ -28,16 +28,32 @@ public:
 
 public:
 	T item_at(int index) {
-		node<T> *nextNode = new node<T>;
-		nextNode = head;
-		for (int i = 0; i < index; i++)
-		{
-			nextNode = nextNode->next;
+		if (index == 0)
+			return front();
+		else if (index == size - 1)
+			return back();
+		else {
+			node<T> *node = get_node_at(index);
+			return node->data;
 		}
-
-		return nextNode->data;
-
 	}
+
+
+public:
+	void insert_item(int index, T value) {
+		if (index == 0)
+			push_front(value);
+		else if (index == size - 1)
+			push_back(value);
+		else{
+		node<T> *previousNode = get_node_at(index-1);
+		node<T> *addedNode = new node<T>;
+		addedNode->data = value;
+		addedNode->next = previousNode->next;
+		previousNode->next = addedNode;
+		}
+	}
+
 
 public:
 	void push_back(T value) {
@@ -95,6 +111,30 @@ public:
 	}
 
 public:
+	void earse(int index) {
+		if (index == 0)
+			pop_front();
+		else if (index == size - 1)
+			pop_back();
+		else {
+			node<T> *previousNode = get_node_at(index - 1);
+			node<T> *earsedNode = previousNode->next;
+			previousNode->next = earsedNode->next;
+			size--;
+		}
+	}
+
+public:
+	T front() {
+		return head->data;
+	}
+
+public:
+	T back() {
+		return tail->data;
+	}
+
+public:
 	int get_size() {
 		return size;
 	}
@@ -117,5 +157,18 @@ public:
 			nextNode = nextNode->next;
 		}
 	}
+
+
+	private :
+		node<T>* get_node_at(int index) {
+			node<T> *nextNode = new node<T>;
+			nextNode = head;
+			for (int i = 0; i < index; i++)
+			{
+				nextNode = nextNode->next;
+			}
+
+			return nextNode;
+		}
 
 };
