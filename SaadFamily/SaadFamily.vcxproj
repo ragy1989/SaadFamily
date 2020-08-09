@@ -152,6 +152,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="SaadFamily.cpp" />
+    <ClCompile Include="Sara.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sara.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
