@@ -26,5 +26,8 @@
     <ClInclude Include="Linda.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Queen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

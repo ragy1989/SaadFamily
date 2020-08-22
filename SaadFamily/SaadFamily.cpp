@@ -5,21 +5,17 @@ using namespace std;
 #include <iostream>
 #include "Sara.h"
 #include "Linda.h"
+#include "Queen.h"
 
 int main()
 {
-	Linda<int> s;
+	QueenLinda<int> ss;
+	ss.enqueue(0);
+	ss.enqueue(1);
+	ss.enqueue(2);
 
-	s.push_back(2);
-	s.push_back(3);
-	s.push_back(4);
-	s.push_front(1);
-	s.push_front(0);
-	cout << s.get_size();
-	cout << "\n";
-	s.reverse();
-
-	s.data();
+	cout << ss.dequeue();
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
