@@ -9,13 +9,20 @@ using namespace std;
 
 int main()
 {
-	QueenLinda<int> ss;
+	QueenCarole<int> ss(5);
 	ss.enqueue(0);
 	ss.enqueue(1);
 	ss.enqueue(2);
-
+	ss.enqueue(3);
+	ss.enqueue(4);
+	cout << ss.is_empty();
+	cout << "\n";
 	cout << ss.dequeue();
-	
+	cout << "\n";
+	cout << ss.dequeue();
+	cout << "\n";
+
+	cout << ss.get_size();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
