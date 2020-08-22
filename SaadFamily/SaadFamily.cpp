@@ -15,7 +15,9 @@ int main()
 	s.push_back(4);
 	s.push_front(1);
 	s.push_front(0);
-	s.earse(2);
+	cout << s.get_size();
+	cout << "\n";
+	s.reverse();
 
 	s.data();
 }

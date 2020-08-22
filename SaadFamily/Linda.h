@@ -111,6 +111,14 @@ public:
 	}
 
 public:
+	T pop_front_with_value() {
+		T returnValue = head->data;
+		head = head->next;
+		size--;
+		return returnValue;
+	}
+
+public:
 	void earse(int index) {
 		if (index == 0)
 			pop_front();
@@ -123,6 +131,63 @@ public:
 			size--;
 		}
 	}
+
+	public:
+		void remove_value(T value) {
+			node<T> *earsedNode = new node<T>;
+			node<T> *previousNode = new node<T>;
+			earsedNode = head;
+			previousNode = head;
+			int i=0;
+			for (i ; i < size; i++)
+			{
+				if (earsedNode->data == value)
+					break;
+
+				previousNode = earsedNode;
+				earsedNode = earsedNode->next;
+			}
+			if (i == 0)
+				pop_front();
+			else if (i == size - 1)
+				pop_back();
+			else {
+				previousNode->next = earsedNode->next;
+				size--;
+			}
+
+		}
+
+public:
+	 void reverse() {
+		 node<T> *newTail= NULL;	
+		 node<T> *previousNode = new node<T>;
+		 int fixedSize = size;
+		 for (int i = 0; i < fixedSize; i++)
+		 {
+			 T value = pop_front_with_value();
+			 node<T> *nextNode = new node<T>;
+			 nextNode->data = value;
+			 nextNode->next = NULL;
+
+			 if (newTail == NULL) {
+				 newTail = nextNode;
+				 previousNode = nextNode;
+			
+			 }
+			 else
+			 {
+				 nextNode->next = previousNode;
+				 previousNode = nextNode;
+
+			 }
+          
+		 }
+		 head = previousNode;
+		 tail = newTail;
+		 size = fixedSize;
+
+		 }
 
 public:
 	T front() {
