@@ -6,23 +6,38 @@ using namespace std;
 #include "Sara.h"
 #include "Linda.h"
 #include "Queen.h"
+#include "AboHashima.h"
+
+#include <iostream>
+#include <functional>
+#include <string>
+#include <cmath>  
 
 int main()
 {
-	QueenCarole<int> ss(5);
-	ss.enqueue(0);
-	ss.enqueue(1);
-	ss.enqueue(2);
-	ss.enqueue(3);
-	ss.enqueue(4);
-	cout << ss.is_empty();
-	cout << "\n";
-	cout << ss.dequeue();
-	cout << "\n";
-	cout << ss.dequeue();
-	cout << "\n";
+	char nts1[] = "Test";
+	char nts2[] = "Test";
+	std::string str1(nts1);
+	std::string str2(nts2);
 
-	cout << ss.get_size();
+	std::hash<char*> ptr_hash;
+	std::hash<std::string> str_hash;
+
+	auto hashed = str_hash(str1);
+
+
+	AboHashima<std::string, std::string> abo(16);
+	abo.add("ragy", "software");
+	abo.add("atef", "pharam");
+	abo.add("zaky", "eng");
+	cout<<abo.exists("atef"); cout << abo.exists("ragy");
+	abo.remove("atef"); abo.remove("ragy");
+	cout << '\n';
+	abo.data();
+
+
+
+	
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

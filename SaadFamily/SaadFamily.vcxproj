@@ -154,6 +154,7 @@
     <ClCompile Include="SaadFamily.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AboHashima.h" />
     <ClInclude Include="Linda.h" />
     <ClInclude Include="Queen.h" />
     <ClInclude Include="Sara.h" />
